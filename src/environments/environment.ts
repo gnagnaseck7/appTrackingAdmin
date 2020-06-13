@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: 'http://localhost:8089/appTracking',
+  mapAPiKe:'AIzaSyBz1YYZSpeQOj6KJn9Wxe7n1l_0rpNlLzY'
 };
 
 /*

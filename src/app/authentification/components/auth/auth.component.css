@@ -1,0 +1,10 @@
+.imgBackground{
+    background-repeat: no-repeat;
+    padding-top: 10px;
+    height: 100%; /* You must set a specified height */
+    background-size: cover;
+}
+
+.imgBackground .col-md-12{
+    padding-top:54px; 
+}

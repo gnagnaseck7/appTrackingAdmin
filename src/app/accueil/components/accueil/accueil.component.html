@@ -1,0 +1,38 @@
+
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h3 class="text-danger">Activités en cours</h3>
+        </div>
+    </div>
+   
+    <div class="row">
+        <div class="col-md-4">
+              <div class="panel panel-primary">
+                  <div class="panel-heading">
+                      liste des activités en cours
+                  </div>
+                  <div class="panel-body">
+                    <div class="panel panel-default" *ngFor="let item of listeCurrentActiviteEnCours">
+                        <div class="panel-heading">{{item.prenomNomUser}}</div>
+                        <div class="panel-body" (click)="getPointGps(item.idActiviteUser)">Activité : {{item.libelleActivite}} du {{item.dateActivite | date:'dd/MM/yyyy'}}
+                            <p> débuter à: {{item.heureDebut}}</p>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+        </div>
+        <div class="col-md-8">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    Map des point GPS
+                </div>
+                <div class="panel-body">
+                    <div #mapContainer id="map"></div>
+                </div>
+            </div>
+      </div>
+    </div>
+    
+   
+</div>

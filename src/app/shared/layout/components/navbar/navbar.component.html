@@ -1,0 +1,47 @@
+<!--<nav class="flex-column navbar-container">
+    <a class="newpgd-logo" routerLink="/">fatc-Intercos</a>
+    <div class="sidenav-container">
+      <div class="dynamic-sidenav-child">
+        <ng-template #dynamicComponent></ng-template>
+      </div>
+    </div>
+  </nav>-->
+  
+  <nav class="navbar navbar-default sidebar" role="navigation">
+    <div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<img class="img img-responsive img-thumbnail logo" src="assets/images/logo.png" alt="">
+		</div>
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
+			<ng-template #dynamicComponent></ng-template>
+		</div>
+	</div>
+</nav>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+              <img class="img img-responsive img-circle user-img" src="assets/images/user.png" alt="">
+          </li>
+          <li class="dropdown" dropdown> <!-- {1} -->
+            <a dropdownToggle role="button" (click)="logoutUser()"> <!-- {2} -->
+             <b><u>compte : {{currentUserName}} <span class="caret"></span></u></b> </a>
+            <ul *dropdownMenu class="dropdown-menu" > <!-- {3} -->
+                <li><a href="#">DECONNEXION</a></li>
+            </ul>
+        </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
