@@ -7,10 +7,9 @@ import {} from "googlemaps";
 @Component({
   selector: 'app-accueil',
   templateUrl: './accueil.component.html',
-  styleUrls: ['./accueil.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./accueil.component.scss']
 })
-export class AccueilComponent implements OnInit {
+export class AccueilComponent{
   listeCurrentActiviteEnCours:ActiviteUserRetour[]=[];
   listePoiintCurrentActiviteEnCours:PointGps[]=[];
 
@@ -35,6 +34,7 @@ export class AccueilComponent implements OnInit {
 
   creerTableauMaker(tabPoints:PointGps[]){
     let markers:any[]=[];
+    this.markers=[];
     for(let point of tabPoints){
       let obj={
          position: new google.maps.LatLng(point.latitude, point.longitude),
@@ -64,18 +64,15 @@ export class AccueilComponent implements OnInit {
     title: "Hello World!"
   });
 
-  ngOnInit(): void {
-    
-  }
-
 
   getPointGps(idActiviteUser:number){
+    this.markers=[];
+    this.mapInitializer();
     this.pointGpsEmitter.emit(idActiviteUser);
   }
 
   mapInitializer(): void {
     this.map = new google.maps.Map(this.gmap.nativeElement, this.mapOptions);
-
     //Adding Click event to default marker
     this.marker.addListener("click", () => {
       const infoWindow = new google.maps.InfoWindow({
